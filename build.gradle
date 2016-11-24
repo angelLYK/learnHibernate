@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+	
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+		
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+	compile(
+		"org.hibernate:hibernate-core:5.2.4.Final",
+		"mysql:mysql-connector-java:5.1.38"
+	)
+}
+		
+idea {
+	module {
+		downloadJavadoc = false
+		downloadSources = true
+	}
+}
